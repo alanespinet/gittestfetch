@@ -1,1 +1,17 @@
-h1 { font-family: 'Roboto', sans-serif; }
+html { font-size: 62.5%; }
+body { padding: 0; margin: 0; }
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 8rem;
+  color: #f2f2f2;
+  font-weight: normal;
+  margin-top: 20px;
+}
+
+img { display: block; }
+
+.fluid-image {
+  width: 100%;
+  height: auto;
+}
