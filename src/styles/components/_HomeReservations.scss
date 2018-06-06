@@ -1,0 +1,65 @@
+.home-reservation__form {
+
+  background-color: rgba(0,0,0, .6);
+  max-width: 950px;
+  margin: 50px auto 0;
+  padding: 40px 30px;
+}
+
+
+
+.reservation-form__fields {
+
+  .group-field-row,
+  .group-field-half-subrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .group-field-half-subrow,
+  .group-type-half { flex-basis: 48%; }
+  .group-type-full { flex-basis: 100%; }
+
+  .group-field { margin-bottom: 20px; }
+
+  label, input {
+    width: 100%;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    color: $white;
+    font-weight: 300;
+  }
+
+  label { margin-bottom: 10px; }
+
+  input {
+    border: none;
+    background-color: #646464;
+    height: 35px;
+    border-bottom: 1px solid $white;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: $brown;
+    border: none;
+    height: 35px;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    color: $gray;
+    font-weight: 300;
+    width: 180px;
+    transition: all .3s ease;
+    display: block;
+    margin: 50px auto 0;
+  }
+
+  button:hover {
+    background-color: lighten( $brown, 10% );
+    cursor: pointer;
+  }
+}

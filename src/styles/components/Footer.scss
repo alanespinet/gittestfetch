@@ -1,0 +1,84 @@
+.footer {
+
+  background-color: $black;
+  padding-top: 30px;
+  padding-bottom: 50px;
+
+  .footer-divided-content-wrapper {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .right-side { flex-basis: 70%; }
+    .left-side { flex-basis: 30%; }
+
+    p {
+      color: $white;
+      font-size: 2rem;
+      font-weight: 300;
+    }
+
+    i {
+      color: $white;
+      font-size: 3.6rem;
+      transition: all .3s ease;
+    }
+
+    .fallow-sm a {
+      margin: 10px 5px;
+    }
+
+    .fallow-sm a:hover i {
+      color: $brown;
+    }
+
+    .subscribe-input-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      input {
+        display: block;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.6rem;
+        color: $white;
+        font-weight: 300;
+        border: none;
+        background-color: lighten($black, 5%);
+        height: 35px;
+        border-bottom: 1px solid $white;
+        padding: 10px;
+        box-sizing: border-box;
+        flex-basis: calc(100% - 200px);
+      }
+
+      button {
+        background-color: $brown;
+        border: none;
+        height: 35px;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.6rem;
+        color: $gray;
+        font-weight: 300;
+        flex-basis: 180px;
+        transition: all .3s ease;
+        display: block;
+      }
+
+      button:hover {
+        background-color: lighten( $brown, 10% );
+        cursor: pointer;
+      }
+    }
+
+    .acknokwledments-link {
+      color: $blue;
+      text-decoration: underline;
+      padding-left: 30px;
+    }
+
+  }
+
+}

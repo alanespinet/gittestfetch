@@ -7,19 +7,33 @@
     background-position: center;
     background-size: cover;
 
-    h3 {
+    .home-location__content {
       position: absolute;
       left: 50%;
       bottom: 80px;
       -moz-transform: translateX(-50%);
       -webkit-transform: translateX(-50%);
       transform: translateX(-50%);
-
-      font-family: 'Pacifico', cursive;
-      font-size: 3rem;
       color: $white;
-      font-weight: normal;
+      text-align: center;
+
+      h3 {
+        font-family: 'Pacifico', cursive;
+        font-size: 3rem;
+        font-weight: normal;
+      }
+
+      p {
+        color: inherit;
+        font-size: 2rem;
+      }
+
+      i {
+        font-size: 8rem;
+      }
+
     }
+
   }
 
 }

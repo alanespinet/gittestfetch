@@ -2,17 +2,19 @@ import React from 'react';
 
 import Hero from '../../common/Hero.js';
 import Header from '../../common/Header.js';
+import Footer from '../../common/Footer.js';
 import Main from '../../common/Main.js';
 import SectionContent from '../../common/SectionContent.js';
 import HomeGallery from './HomeGallery';
 import HomeCousine from './HomeCousine';
 import HomeLocation from './HomeLocation';
+import HomeReservation from './HomeReservation';
 
 
 class Home extends React.Component {
   render() {
     return (
-      <div>
+      <div className="view-element">
         <Hero
           page_title="React-ive Restaurant"
           page_hero_image="/home_hero.jpg"
@@ -37,8 +39,11 @@ class Home extends React.Component {
           </SectionContent>
 
           <SectionContent section_title="Make a Reservation">
+            <HomeReservation />
           </SectionContent>
         </Main>
+
+        <Footer />
       </div>
     )
   }
