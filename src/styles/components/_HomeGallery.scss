@@ -1,0 +1,25 @@
+.home-gallery { margin-top: 50px; }
+
+.first-row {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .row-image {
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .frfi {
+    flex-basis: 74.5%;
+  }
+
+  .frsi {
+    flex-basis: 24.5%;
+  }
+
+}

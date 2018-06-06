@@ -1,0 +1,24 @@
+.cousine-row {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .cousine-fc {
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    flex-basis: 49%;
+  }
+
+  .cousine-sc {
+    flex-basis: 49%;
+  }
+
+  .cousine-sc p {
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+}

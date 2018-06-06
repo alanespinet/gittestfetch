@@ -1,0 +1,25 @@
+.home-location {
+
+  .home-location__image {
+    position: relative;
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    h3 {
+      position: absolute;
+      left: 50%;
+      bottom: 80px;
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: $white;
+      font-weight: normal;
+    }
+  }
+
+}

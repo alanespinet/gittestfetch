@@ -1,0 +1,15 @@
+.main {
+  position: relative;
+  min-height: 3000px;
+
+  .bg_image {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    z-index: -1;
+  }
+
+  .bg_top { top: 0; }
+  .bg_bottom { bottom: 0; }
+}
