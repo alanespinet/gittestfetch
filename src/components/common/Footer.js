@@ -33,6 +33,9 @@ class Footer extends React.Component {
               <p><NavLink className="acknokwledments-link" to="/acknokwledments">acknokwledments</NavLink></p>
             </div>
           </div>
+          <div className="footer-colophon">
+            <p>Created by Alan Espinet - <a href="http://alanespinet.com/" target="_blank">alanespinet.com</a></p>
+          </div>
         </div>
       </div>
     );

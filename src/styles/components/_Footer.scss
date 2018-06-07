@@ -2,7 +2,7 @@
 
   background-color: $black;
   padding-top: 30px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 
   .footer-divided-content-wrapper {
 
@@ -77,8 +77,30 @@
       color: $blue;
       text-decoration: underline;
       padding-left: 30px;
+      transition: all .3s ease;
+    }
+
+    .acknokwledments-link:hover {
+      color: lighten($blue, 10%);
     }
 
   }
 
+  .footer-colophon { padding-top: 40px; }
+
+  .footer-colophon p {
+    text-align: center;
+    color: $brown;
+    font-weight: 300;
+  }
+
+  .footer-colophon a {
+    text-decoration: underline;
+    transition: all .3s ease;
+    color: $brown;
+  }
+
+  .footer-colophon a:hover {
+    color: lighten( $brown, 10% );
+  }
 }
