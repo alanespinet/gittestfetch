@@ -1,0 +1,45 @@
+.menu-drinks {
+
+  .menu-section-layout {
+
+    padding-top: 40px;
+    height: 800px;
+    position: relative;
+
+    .main-panel {
+      background-color: #c6d6ba;
+      height: 260px;
+      position: relative;
+
+      h2 {
+        padding-top: 40px;
+        padding-left: 150px;
+        font-weight: normal;
+      }
+
+      img {
+        width: 320px;
+        height: auto;
+        position: absolute;
+        top: 220px;
+        right: -20px;
+      }
+    }
+
+    .floating-panel {
+      position: absolute;
+      top: 200px;
+      background-color: rgba( #000, .5 );
+      left: -40px;
+      right: -40px;
+      height: 600px;
+
+      ul {
+        margin-left: 90px;
+        margin-top: 170px;
+      }
+    }
+
+  }
+
+}

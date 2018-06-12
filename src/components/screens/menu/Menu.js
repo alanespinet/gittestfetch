@@ -4,6 +4,9 @@ import Header from '../../common/Header.js';
 import Footer from '../../common/Footer.js';
 import Main from '../../common/Main.js';
 import MenuBreakfast from './MenuBreakfast';
+import MenuLunch from './MenuLunch';
+import MenuDinner from './MenuDinner';
+import MenuDrinks from './MenuDrinks';
 
 class Menu extends React.Component {
   render(){
@@ -18,6 +21,9 @@ class Menu extends React.Component {
 
         <Main>
           <MenuBreakfast />
+          <MenuLunch />
+          <MenuDinner />
+          <MenuDrinks />
         </Main>
 
         <Footer />

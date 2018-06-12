@@ -1,0 +1,47 @@
+.menu-dinner-content {
+
+  position: relative;
+  height: 700px;
+
+  .main-panel {
+    background-color: #ecd9ec;
+    width: 70%;
+    height: 540px;
+    margin-top: 30px;
+    position: relative;
+
+    img {
+      width: 600px;
+      height: auto;
+      position: absolute;
+      bottom: -210px;
+      left: 50%;
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+    }
+  }
+
+  .floating-panel {
+    background-color: rgba( #000, .5 );
+    width: 80%;
+    height: 620px;
+    position: absolute;
+    top: -140px;
+    right: -40px;
+
+    h2 {
+      font-weight: normal;
+      position: absolute;
+      right: 40px;
+      top: 30px;
+      color: $white;
+    }
+
+    ul {
+      margin-top: 170px;
+      padding-left: 80px;
+    }
+  }
+
+}
