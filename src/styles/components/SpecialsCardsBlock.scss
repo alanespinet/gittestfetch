@@ -1,0 +1,18 @@
+.specials-cards-block {
+
+  .specials-cards-block-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .special-cards-block-wrapper {
+    width: 950px;
+    margin: 80px auto;
+  }
+
+  .first-cards-row > .specials-card { flex-basis: 32%; }
+  .second-cards-row > .specials-card { flex-basis: 100%; }
+
+}

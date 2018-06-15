@@ -1,0 +1,56 @@
+.specials-card {
+
+  position: relative;
+  overflow: hidden;
+
+  .specials-card__image {
+    height: 350px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .specials-card__title {
+    position: relative;
+    z-index: 1;
+  }
+
+  .specials-card__title h3 {
+    margin: 0;
+    font-family: 'Pacifico', sans-serif;
+    font-size: 2.8rem;
+    color: $white;
+    font-weight: normal;
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  .specials-card-content {
+    position: absolute;
+    top: 350px;
+    left: 0;
+    width: 100%;
+    height: 350px;
+    background-color: rgba($white, .9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all .3s ease;
+  }
+
+}
+
+.specials-card:hover {
+
+  cursor: arrow;
+
+  .specials-card-content {
+    top: 0;
+
+  }
+
+}
