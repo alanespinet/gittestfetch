@@ -1,6 +1,8 @@
 import React from 'react';
 import Hero from '../../common/Hero.js';
 import Header from '../../common/Header.js';
+import Footer from '../../common/Footer.js';
+import Main from '../../common/Main.js';
 
 class About extends React.Component {
   render(){
@@ -12,6 +14,12 @@ class About extends React.Component {
         />
 
         <Header />
+
+        <Main>
+
+        </Main>
+
+        <Footer />
       </div>
     );
   }
