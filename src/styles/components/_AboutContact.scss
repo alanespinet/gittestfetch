@@ -1,0 +1,49 @@
+.about-contact {
+
+  padding-top: 40px;
+
+  h2 {
+    font-weight: normal;
+    margin-bottom: 40px;
+  }
+
+  h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 2.4rem;
+    text-transform: lowercase;
+    color: #7099ab;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  .about-contact-wrapper {
+    background-color: #c6d6b8;
+    padding: 40px;
+
+    p {
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+  }
+
+  .about-social-block {
+    padding-top: 50px;
+
+    i {
+      color: $black;
+      font-size: 3.6rem;
+      transition: all .3s ease;
+    }
+
+    .fallow-sm a {
+      margin: 10px 5px;
+    }
+
+    .fallow-sm a:hover i {
+      color: $brown;
+    }
+  }
+
+
+}

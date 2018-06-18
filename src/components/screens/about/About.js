@@ -3,6 +3,9 @@ import Hero from '../../common/Hero.js';
 import Header from '../../common/Header.js';
 import Footer from '../../common/Footer.js';
 import Main from '../../common/Main.js';
+import AboutIntro from './AboutIntro';
+import AboutStaff from './AboutStaff';
+import AboutContact from './AboutContact';
 
 class About extends React.Component {
   render(){
@@ -16,7 +19,9 @@ class About extends React.Component {
         <Header />
 
         <Main>
-
+          <AboutIntro />
+          <AboutStaff />
+          <AboutContact />
         </Main>
 
         <Footer />
