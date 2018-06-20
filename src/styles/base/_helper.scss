@@ -4,5 +4,9 @@
 
 .p-tb-80 {
   padding-top: 80px;
-  padding-bottom: 80px; 
+  padding-bottom: 80px;
+}
+
+@media ( max-width: 767px ){
+  .p-t-80 { padding-top: 40px; }
 }

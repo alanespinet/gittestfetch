@@ -22,3 +22,18 @@
     margin-bottom: 20px;
   }
 }
+
+
+@media ( max-width: 767px ){
+  .cousine-row { flex-direction: column; }
+
+  .cousine-row .cousine-fc,
+  .cousine-row .cousine-sc {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  .cousine-row .cousine-fc { height: 360px; }
+  .cousine-row .cousine-sc { padding-top: 30px; }
+
+}

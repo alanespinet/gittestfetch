@@ -40,3 +40,37 @@ img { display: block; }
 }
 
 .blue { color: $blue; }
+
+
+
+@media ( max-width: 1199px ){
+  .container {
+    max-width: 970px;
+  }
+
+  h1 { font-size: 6rem; }
+}
+
+@media ( min-width: 992px ){
+  .hidden-device { display: block; }
+  .hidden-desktop { display: none; }
+}
+
+@media ( max-width: 991px ){
+  .container {
+    max-width: 750px;
+  }
+
+  h1 { font-size: 5rem; }
+  .hidden-device { display: none; }
+  .hidden-desktop { display: block; }
+}
+
+@media ( max-width: 767px ){
+  .container {
+    max-width: 100%;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2.3rem; }
+}

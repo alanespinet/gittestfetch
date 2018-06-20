@@ -23,3 +23,19 @@
   }
 
 }
+
+
+
+@media ( max-width: 991px ){
+  .frsi { display: none; }
+
+  .first-row .frfi {
+    flex-basis: 100%;
+    height: 360px;
+  }
+}
+
+@media ( max-width: 767px ){
+  .home-gallery { margin-top: 30px; }
+  .first-row .frfi { height: 260px; }
+}

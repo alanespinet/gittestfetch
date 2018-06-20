@@ -101,3 +101,26 @@
       color: $brown;
     }
 }
+
+
+@media ( max-width: 991px ){
+  .reservation-form__fields {
+    label { font-size: 1.5rem; }
+  }
+}
+
+@media ( max-width: 767px ){
+
+  .reservation-form__fields {
+
+    .group-field-half-subrow,
+    .group-field-row { flex-wrap: wrap; }
+
+    .group-type-half,
+    .group-field-half-subrow { flex-basis: 100%; }
+
+    button { margin-top: 30px; }
+
+  }
+
+}

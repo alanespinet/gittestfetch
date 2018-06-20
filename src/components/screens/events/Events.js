@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../../common/Hero.js';
 import Header from '../../common/Header.js';
+import HeaderMobile from '../../common/HeaderMobile.js';
 import Footer from '../../common/Footer.js';
 import Main from '../../common/Main.js';
 import EventsIntro from './EventsIntro';
@@ -14,9 +15,11 @@ class Events extends React.Component {
         <Hero
           page_title="Events"
           page_hero_image="/events_hero.jpg"
+          page_hero_image_mobile="/events_hero_mobile.jpg"
         />
 
         <Header />
+        <HeaderMobile />
 
         <Main>
           <EventsIntro />

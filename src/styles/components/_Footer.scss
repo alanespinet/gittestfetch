@@ -104,3 +104,37 @@
     color: lighten( $brown, 10% );
   }
 }
+
+
+@media ( max-width: 767px ){
+
+  .footer .footer-divided-content-wrapper {
+    flex-direction: column;
+  }
+
+  .footer .footer-divided-content-wrapper .acknokwledments-link {
+    padding-left: 0;
+    margin-top: 30px;
+    display: block;
+  }
+
+  .footer .footer-divided-content-wrapper .subscribe-input-button {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .footer .footer-divided-content-wrapper .subscribe-input-button button {
+    flex-basis: 35px;
+  }
+
+  .footer .footer-divided-content-wrapper p {
+    font-size: 1.6rem;
+  }
+
+  .footer .footer-divided-content-wrapper .right-side {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+}
