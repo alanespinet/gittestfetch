@@ -12,3 +12,24 @@
   }
 
 }
+
+
+@media ( max-width: 767px ){
+
+  .reservations {
+
+    h2 { text-align: center; }
+
+    .reservations-form h3 {
+      width: 100%;
+      font-size: 2.1rem;
+    }
+
+    .reservations__reservations-form h2 {
+      padding-top: 20px;
+      font-weight: normal;
+    }
+
+  }
+
+}

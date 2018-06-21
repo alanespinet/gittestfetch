@@ -14,3 +14,10 @@
   .bg_top { top: 0; }
   .bg_bottom { bottom: 0; }
 }
+
+
+@media ( max-width: 991px ){
+
+  .main { min-height: auto; }
+
+}

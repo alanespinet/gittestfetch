@@ -47,3 +47,24 @@
 
 
 }
+
+
+@media ( max-width: 767px ){
+
+  .about-contact {
+
+    h3 { font-size: 1.8rem; }
+    h2 { margin-bottom: 20px; }
+
+    .about-contact-block p {
+      text-align: center;
+      margin-bottom: 10px;
+
+      i { display: none; }
+    }
+
+    .about-social-block i { font-size: 3rem; }
+
+  }
+
+}

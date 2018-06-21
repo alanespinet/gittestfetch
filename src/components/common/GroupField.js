@@ -7,7 +7,9 @@ import React from 'react';
 // prop: field_label -> 'text'
 // prop: field_required -> true or false
 
-export default (props) => (
+
+
+const GroupField = (props) => (
   <div className={`group-field group-type-${props.group_type}`}>
     <label htmlFor={props.field_id}>{props.field_label}</label>
     <input
@@ -18,3 +20,5 @@ export default (props) => (
     />
   </div>
 );
+
+export default GroupField;

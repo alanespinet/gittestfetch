@@ -52,3 +52,26 @@
   }
 
 }
+
+
+@media ( max-width: 991px ){
+
+  .specials-card {
+
+    .specials-card__title h3 { font-size: 2.4rem; }
+    .specials-card-content { top: 0; }
+
+  }
+
+}
+
+@media ( max-width: 767px ){
+
+  .specials-card {
+
+    .specials-card__title h3 { font-size: 1.8rem; }
+    .specials-card-content { top: 0; }
+
+  }
+
+}

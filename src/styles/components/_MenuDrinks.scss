@@ -43,3 +43,67 @@
   }
 
 }
+
+
+@media ( max-width: 991px ){
+
+  .menu-drinks {
+    ul li {
+      font-size: 2.4rem;
+      line-height: 4rem;
+    }
+  }
+
+}
+
+
+@media ( max-width: 767px ) {
+
+  .menu-drinks {
+
+    padding-top: 50px;
+
+    .menu-section-layout {
+      height: 320px;
+      padding-top: 0;
+    }
+
+    .menu-section-layout img { display: none; }
+
+    .menu-section-layout .main-panel {
+      height: 320px;
+
+      h2 {
+        padding-left: 0;
+        text-align: center;
+        padding-top: 20px;
+      }
+    }
+
+    .menu-section-layout .floating-panel {
+      width: 90%;
+      left: 50%;
+      top: 75px;
+      height: 230px;
+      -moz-transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+
+
+      ul {
+        position: static;
+        padding-top: 20px;
+        padding-left: 0;
+        margin: 0;
+
+        li {
+          font-size: 1.6rem;
+          text-align: center;
+          line-height: 3rem;
+        }
+      }
+    }
+
+  }
+
+}

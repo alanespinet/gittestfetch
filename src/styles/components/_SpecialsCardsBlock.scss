@@ -16,3 +16,40 @@
   .second-cards-row > .specials-card { flex-basis: 100%; }
 
 }
+
+
+@media ( max-width: 991px ){
+
+  .specials-cards-block {
+
+    .special-cards-block-wrapper {
+      width: 100%;
+    }
+
+    .specials-cards-block-row {
+      flex-wrap: wrap;
+    }
+
+  }
+
+}
+
+
+@media ( max-width: 767px ){
+
+  .specials-cards-block {
+
+    .first-cards-row > .specials-card {
+      flex-basis: 100%;
+      margin-bottom: 20px;
+    }
+
+    .first-cards-row > .specials-card:last-child {
+      margin-bottom: 0;
+    }
+
+
+
+  }
+
+}

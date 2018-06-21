@@ -10,7 +10,7 @@ import ReservationsForm from './ReservationsForm';
 class Reservations extends React.Component {
   render(){
     return (
-      <div>
+      <div className="reservations">
         <Hero
           page_title="Reservations"
           page_hero_image="/reservations_hero.jpg"

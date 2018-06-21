@@ -18,3 +18,25 @@
     justify-content: space-around;
   }
 }
+
+
+@media ( max-width: 767px ){
+
+  .about-block {
+
+    h3 {
+      margin-bottom: 0;
+      font-size: 1.8rem;
+    }
+
+    .about-staff {
+
+      flex-direction: column;
+
+    }
+
+  }
+
+  .about-staff h2 { margin-bottom: 20px !important; }
+
+}
