@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
-import defaultReducer from './default';
+import reservationsReducer from './reservations';
+import authenticationReducer from './auth';
 
 
 export default combineReducers({
-  defaultReducer
+  reservationsReducer,
+  authenticationReducer
 });

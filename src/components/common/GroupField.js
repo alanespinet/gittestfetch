@@ -6,6 +6,8 @@ import React from 'react';
 // prop: field_name -> 'text'
 // prop: field_label -> 'text'
 // prop: field_required -> true or false
+// prop: field_value -> 'text'
+// prop: onChange -> handler
 
 
 
@@ -17,6 +19,8 @@ const GroupField = (props) => (
       id={props.field_id}
       name={props.field_name}
       required={props.field_required ? 'required' : ''}
+      value={props.field_value}
+      onChange={props.onChange}
     />
   </div>
 );

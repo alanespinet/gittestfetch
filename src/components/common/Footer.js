@@ -1,11 +1,67 @@
 import React from 'react';
+import axios from 'axios';
+
 import { NavLink } from 'react-router-dom';
+import ReservationSuccess from './ReservationSuccess';
+import ReservationFailed from './ReservationFailed';
 
 class Footer extends React.Component {
+
+  state = {
+    email: '',
+    successShow: false,
+    failedShow: false
+  }
+
+  handleEmailChange = (e) => {
+    const email = e.target.value;
+    this.setState( () => ({ email }) );
+  }
+
+  handleSubmitSubscribe = (e) => {
+    e.preventDefault();
+    axios.post( 'http://localhost:3090/subscribe', { email: this.state.email } )
+      .then( response => {
+        if( response.data !== 'error' ){
+          return this.setState( () => ({ successShow: true, email: '' }) )
+        } else {
+          return this.setState( () => ({ failedShow: true }) )
+        }
+      })
+      .catch( () => { console.log('hey'); this.setState( () => ({ failedShow: true }) ) })
+  }
+
+  handleCloseSuccessModal = () => {
+    this.setState( () => ({
+      successShow: false
+    }) );
+  }
+
+  handleCloseFailedModal = () => {
+    this.setState( () => ({
+      failedShow: false
+    }) );
+  }
 
   render(){
     return (
       <div className="footer">
+
+        <ReservationSuccess
+          show={this.state.successShow}
+          closeModal={this.handleCloseSuccessModal}
+        >
+          <h3>Your Subscription was completed Successfully</h3>
+        </ReservationSuccess>
+
+        <ReservationFailed
+          show={this.state.failedShow}
+          closeModal={this.handleCloseFailedModal}
+        >
+          <h3>Ops! Something went wrong with your subscription.</h3>
+          <p>Did you forget to write your email? Remember also that you can only subscribe once.</p>
+        </ReservationFailed>
+
         <div className="container">
           <div className="footer-divided-content-wrapper">
             <div className="right-side">
@@ -20,10 +76,12 @@ class Footer extends React.Component {
 
               <p>Subscribe to our Newsletter (email):</p>
               <div className="subscribe-form">
-                <form>
+                <form action="" method="post">
                   <div className="subscribe-input-button">
-                    <input type="email" name="subscribe-email" />
-                    <button id="submit-subscribe">Subscribe</button>
+                    <input type="email" name="subscriber-email"
+                      value={this.state.email} onChange={this.handleEmailChange}
+                    />
+                    <button id="submit-subscribe" onClick={this.handleSubmitSubscribe}>Subscribe</button>
                   </div>
                 </form>
               </div>

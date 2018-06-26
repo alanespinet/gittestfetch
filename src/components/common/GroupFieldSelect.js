@@ -6,6 +6,7 @@ import React from 'react';
 // prop: field_label -> 'text'
 // prop: field_required -> true or false
 // prop: field_options -> array with select options -> each element { value, label }
+// prop: field_value -> value
 
 export default (props) => (
   <div className={`group-field group-type-${props.group_type}`}>
@@ -14,6 +15,8 @@ export default (props) => (
       id={props.field_id}
       name={props.field_name}
       required={props.field_required ? 'required' : ''}
+      value={props.field_value}
+      onChange={props.onChange}
     >
       { props.field_options.map( option =>
         <option key={option.value} value={option.value}>{option.label}</option>

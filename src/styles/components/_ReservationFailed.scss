@@ -1,0 +1,61 @@
+.reservation-failed-overlay {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba( $black, .5 );
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .reservation-failed-modal-content {
+
+    background-color: $white;
+    background-position: center 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 600px;
+    height: 300px;
+    box-shadow: 0 0 20px #000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+
+    h3 {
+      margin: 0;
+      font-family: 'Pacifico', sans-serif;
+      font-size: 3.2rem;
+      text-align: center;
+      font-weight: normal;
+      color: darken( $red, 10% );
+    }
+
+    p { color: darken( $red, 10% ); }
+
+    button {
+      border: none;
+      width: 150px;
+      height: 35px;
+      color: $white;
+      background-color: darken( $red, 10% );
+      transition: all .3s ease;
+      font-family: 'Lato', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-top: 40px;
+    }
+
+    button:hover {
+      background-color: $black;
+      cursor: pointer;
+    }
+
+  }
+}
