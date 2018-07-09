@@ -12,6 +12,7 @@ import Menu from './components/screens/menu/Menu.js';
 import Reservations from './components/screens/reservations/Reservations.js';
 import Specials from './components/screens/specials/Specials.js';
 import PageNotFound from './components/screens/pagenotfound/PageNotFound.js';
+import Admin from './components/screens/admin/Admin';
 
 import './styles/styles.scss';
 
@@ -32,6 +33,7 @@ const jsx = (
           <Route path="/specials" component={Specials} />
           <Route path="/events" component={Events} />
           <Route path="/about" component={About} />
+          <Route path="/admin" component={Admin} />
           <Route component={PageNotFound} />
         </Switch>
       </div>

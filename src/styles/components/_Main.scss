@@ -17,7 +17,14 @@
 
 
 @media ( max-width: 991px ){
-
   .main { min-height: auto; }
+}
+
+.small-main {
+  min-height: calc(100vh - 300px);
+  background-image: url('/images/bg_top.png');
+  background-position: 0 0;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 
 }

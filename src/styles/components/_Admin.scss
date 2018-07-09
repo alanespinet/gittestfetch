@@ -1,0 +1,76 @@
+.admin {
+
+  .admin-hero {
+
+    height: 300px;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .admin-hero__content {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+
+      h1, p {
+        margin: 0;
+        color: $white;
+      }
+
+      h1 {
+        font-weight: normal;
+      }
+    }
+
+  }
+
+  .header-auth__content {
+
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $black;
+
+    .container {
+      width: 100%;
+      text-align: right;
+    }
+
+    .header-auth__content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        color: $white;
+        margin-bottom: 0;
+
+        span {
+          color: $red;
+          font-weight: bold;
+        }
+      }
+    }
+
+    #log-out-button {
+      background-color: $red;
+      color: $white !important;
+      font-family: 'Lato', sans-serif;
+      padding: 10px 15px;
+      text-decoration: none !important;
+      font-size: 1.6rem;
+      transition: all .3s ease;
+    }
+
+    #log-out-button:hover {
+      background-color: darken( $red, 10% );
+    }
+  }
+
+}

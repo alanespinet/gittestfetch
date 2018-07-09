@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { history } from '../../components/App';
+
 
 const pushReservations = reservations => ({
   type: 'PUT_RESERVATIONS',
@@ -38,3 +40,23 @@ export const startAddReservation = reservation => {
       });
   }
 }
+
+export const startLogin = info => {
+  return dispatch => {
+    return axios.post('http://localhost:3090/login', info)
+      .then( response => {
+        dispatch( authenticate( info.username ) );
+        history.push('/admin/panel');
+      })
+      .catch( error => {
+        if( error.response ){
+          console.log(error.response.status);
+        }
+      });
+  }
+}
+
+const authenticate = username => ({
+  type: 'AUTHENTICATE',
+  payload: username
+});
