@@ -45,6 +45,15 @@ export const startLogin = info => {
   return dispatch => {
     return axios.post('http://localhost:3090/login', info)
       .then( response => {
+        const result = response.data;
+        if( result === 'Error: No User Found' ){
+          return 'no_user_found';
+        }
+
+        if( result === 'Non Authenticated' ){
+          return 'not_authenticated';
+        }
+
         dispatch( authenticate( info.username ) );
         history.push('/admin/panel');
       })

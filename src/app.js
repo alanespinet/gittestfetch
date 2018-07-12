@@ -20,7 +20,7 @@ import { getReservations } from './redux/actions';
 store.dispatch( getReservations() );
 
 // console.log( store.getState() );
-const subs = store.subscribe( () => { console.log(store.getState()) } );
+// const subs = store.subscribe( () => { console.log(store.getState()) } );
 
 const jsx = (
   <Provider store={store}>
