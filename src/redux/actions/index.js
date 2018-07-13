@@ -54,6 +54,12 @@ export const startLogin = info => {
           return 'not_authenticated';
         }
 
+        const storageInfo = {
+          authenticated: true,
+          username: info.username
+        }
+        localStorage.setItem('auth_info', JSON.stringify(storageInfo));
+
         dispatch( authenticate( info.username ) );
         history.push('/admin/panel');
       })
@@ -65,7 +71,7 @@ export const startLogin = info => {
   }
 }
 
-const authenticate = username => ({
+export const authenticate = username => ({
   type: 'AUTHENTICATE',
   payload: username
 });

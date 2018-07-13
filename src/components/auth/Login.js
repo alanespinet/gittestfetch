@@ -5,6 +5,7 @@ import ReservationFailed from '../common/ReservationFailed';
 
 import GroupField from '../common/GroupField';
 import * as actions from '../../redux/actions';
+import { history } from '../App';
 
 class Login extends React.Component {
 
@@ -54,6 +55,9 @@ class Login extends React.Component {
           return;
         }
       });
+
+    const bbbbb = this.props.startLogin( this.state.userdata );
+    console.log( bbbbb );
   }
 
   onCloseModal = () => {
@@ -63,9 +67,17 @@ class Login extends React.Component {
     })
   }
 
-  render(){
+  componentDidMount(){
+    this.props.tryLogin();
+  }
 
-    // console.log( this.state );
+  componentDidUpdate(){
+    if(this.props.authenticated ){
+      history.push('/admin/panel');
+    }
+  }
+
+  render(){
 
     return (
       <div className="login p-tb-80">
@@ -109,4 +121,13 @@ class Login extends React.Component {
   }
 }
 
-export default connect(undefined, actions)(Login);
+const mapStateToProps = state => ({
+  authenticated: state.authenticationReducer.authenticated
+});
+
+const mapDispatchToProps = dispatch => ({
+  tryLogin: () => dispatch( actions.authenticate() ),
+  startLogin: username => dispatch( actions.startLogin(username) )
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
