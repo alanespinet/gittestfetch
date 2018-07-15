@@ -55,9 +55,6 @@ class Login extends React.Component {
           return;
         }
       });
-
-    const bbbbb = this.props.startLogin( this.state.userdata );
-    console.log( bbbbb );
   }
 
   onCloseModal = () => {

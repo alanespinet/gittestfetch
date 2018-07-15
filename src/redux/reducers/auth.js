@@ -3,16 +3,9 @@ const defaultState = {
   user: ''
 };
 
-// const defaultState = {
-//   authenticated: true,
-//   user: 'Heather'
-// };
-
 export default ( state = defaultState, action ) => {
   switch( action.type ){
     case 'AUTHENTICATE':
-      console.log('action dispatched');
-      
       let auth_info = defaultState;
       let auth_data = JSON.parse(localStorage.getItem('auth_info'));
 
@@ -22,8 +15,13 @@ export default ( state = defaultState, action ) => {
           user: auth_data.username
         };
       }
-
       return auth_info;
+
+    case 'LOGOUT':
+      if( localStorage.getItem('auth_info') ){
+        localStorage.removeItem('auth_info');
+      }
+      return defaultState;
 
     default:
       return state;

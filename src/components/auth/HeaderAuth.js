@@ -1,10 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { logOut } from '../../redux/actions';
+import { history } from '../App';
+
 
 class HeaderAuth extends React.Component {
 
-  render(){
+  onLogOut = e => {
+    e.preventDefault();
+    this.props.logOut();
+    history.push('/admin/login');
+  }
 
+  render(){
     return (
       <div className="header-auth">
         { this.props.authenticated
@@ -13,7 +21,7 @@ class HeaderAuth extends React.Component {
               <div className="container">
                 <div className="header-auth__content-wrapper">
                   <p>You are currently logged in as: <span>{ this.props.user }</span></p>
-                  <a id="log-out-button" href="#">Log Out</a>
+                  <a id="log-out-button" href="#" onClick={this.onLogOut}>Log Out</a>
                 </div>
               </div>
             </div>
@@ -30,4 +38,8 @@ const mapStateToProps = (state) => ({
   user: state.authenticationReducer.user
 });
 
-export default connect(mapStateToProps)(HeaderAuth);
+const mapDispatchToProps = dispatch => ({
+  logOut: () => dispatch( logOut() )
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderAuth);
