@@ -1,0 +1,72 @@
+.reservation-in-list {
+
+  .reservation-actions-button {
+    border: none;
+    display: block;
+    padding: 10px 20px;
+    margin: 0 5px;
+    box-sizing: border-box;
+    transition: all .3s ease;
+  }
+
+  .reservation-actions-button:hover { cursor: pointer; }
+  .button-view { background-color: #20b2aa; }
+  .button-view:hover { background-color: lighten( #20b2aa, 10% ); }
+  .button-archive { background-color: #ff7f50; }
+  .button-archive:hover { background-color: lighten( #ff7f50, 10% ); }
+
+  .button-cancel {
+    background-color: #f08080;
+    margin-right: 0;
+  }
+
+  .button-cancel:hover { background-color: lighten( #f08080, 10% ); }
+
+  .reservation-data .fn,
+  .reservation-data .ln { flex-basis: 30%; }
+
+  .reservation-data .dt,
+  .reservation-data .hr { flex-basis: 15%; }
+
+  .reservation-data .gs { flex-basis: 10%; }
+}
+
+
+.reservation-in-list-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.reservation-in-list:nth-child(even){
+  background-color: rgba(248, 248, 248, .5);
+}
+
+.reservation-list-headers {
+  width: 900px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.reservation-list-headers .fn,
+.reservation-list-headers .ln { flex-basis: 30%; }
+
+.reservation-list-headers .dt,
+.reservation-list-headers .hr { flex-basis: 15%; }
+
+.reservation-list-headers .gs { flex-basis: 10%; }
+
+.reservation-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 900px;
+}
+
+.reservation-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: calc(100% - 900px);
+}

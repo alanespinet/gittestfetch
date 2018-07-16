@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ReservationList from './ReservationList';
 
 class Panel extends React.Component {
 
@@ -7,7 +7,7 @@ class Panel extends React.Component {
     return (
       <div className="login">
         <div className="container">
-          <h2>Panel</h2>
+          <ReservationList />
         </div>
       </div>
     )
