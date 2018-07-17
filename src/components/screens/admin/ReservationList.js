@@ -13,16 +13,24 @@ class ReservationList extends React.Component {
         <h2>Reservations</h2>
         <ReservationListHeaders />
 
-        {this.props.reservations.map( r => (
-          <ReservationInList
-            key={r._id}
-            firstName={r.firstName}
-            lastName={r.lastName}
-            date={r.date}
-            hour={r.hour}
-            numberOfGuests={r.numberOfGuests}
-          />
-        ))}
+        {this.props.reservations.map( r => {
+          if( !r.archived ){
+            return (
+              <ReservationInList
+                key={r._id}
+                firstName={r.firstName}
+                lastName={r.lastName}
+                date={r.date}
+                hour={r.hour}
+                numberOfGuests={r.numberOfGuests}
+              />
+            );
+          }
+          return null;
+        }
+
+
+        )}
       </div>
     );
   }

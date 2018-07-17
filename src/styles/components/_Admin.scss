@@ -15,8 +15,6 @@
       justify-content: center;
       align-items: center;
 
-
-
       h1, p {
         margin: 0;
         color: $white;
@@ -71,6 +69,35 @@
     #log-out-button:hover {
       background-color: darken( $red, 10% );
     }
+  }
+
+}
+
+
+@media (max-width: 767px) {
+
+  .admin {
+
+    .admin-hero { height: 150px; }
+
+    .header-auth__content {
+      height: 100px;
+
+      #log-out-button {
+        font-size: 1.2rem;
+        padding: 8px 10px;
+      }
+    }
+
+    .header-auth__content-wrapper {
+      flex-direction: column;
+
+      p {
+        margin-bottom: 20px !important;
+        margin-top: 0 !important;
+      }
+    }
+
   }
 
 }
