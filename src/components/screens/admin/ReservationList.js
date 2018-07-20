@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 
 import * as actions from '../../../redux/actions';
 import ReservationInList from './ReservationInList';
@@ -26,8 +27,8 @@ class ReservationList extends React.Component {
             id={r._id}
             firstName={r.firstName}
             lastName={r.lastName}
-            date={r.date}
-            hour={r.hour}
+            date={moment(r.date).format("MM/DD/YYYY")}
+            hour={moment(r.hour).format("HH:mm")}
             numberOfGuests={r.numberOfGuests}
             archived={r.archived}
           /> )
@@ -40,7 +41,18 @@ class ReservationList extends React.Component {
 
 
 const mapStateToProps = state => ({
-  reservations: getReservations(state.reservationsReducer.reservations, { archived: state.filtersReducer.archived })
+  reservations: getReservations(state.reservationsReducer.reservations,
+    {
+      archived: state.filtersReducer.archived,
+      vip: state.filtersReducer.vip,
+      privateTable: state.filtersReducer.privateTable,
+      firstName: state.filtersReducer.firstName,
+      lastName: state.filtersReducer.lastName,
+      fromDate: state.filtersReducer.fromDate,
+      toDate: state.filtersReducer.toDate,
+      enableFromSearch: state.filtersReducer.enableFrom,
+      enableToSearch: state.filtersReducer.enableTo
+    })
 })
 
 export default connect(mapStateToProps)(ReservationList);

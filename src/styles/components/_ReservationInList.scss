@@ -19,7 +19,7 @@
   .reservation-actions-button:hover { cursor: pointer; }
   .button-view { background-color: #20b2aa; }
   .button-view:hover { background-color: lighten( #20b2aa, 10% ); }
-  .button-archive { background-color: #ff7f50; }
+  .button-archive { background-color: #ff7f50; min-width: 95px; }
   .button-archive:hover { background-color: lighten( #ff7f50, 10% ); }
 
   .button-cancel {

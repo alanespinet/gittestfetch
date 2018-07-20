@@ -6,7 +6,36 @@
   padding: 40px 30px;
 }
 
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  padding-top: 6px;
+  box-sizing: border-box;
+}
 
+.date-picker-wrapper {
+  position: relative;
+  top: -10px;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list {
+  padding-left: 8px;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item {
+  font-size: 1.5rem;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+  width: 120px;
+}
+
+.react-datepicker--time-only .react-datepicker__time-container { width: 120px; }
+
+// .react-datepicker__time-container .react-datepicker__time { width: 100px; }
 
 .reservation-form__fields {
 
@@ -43,7 +72,7 @@
     box-sizing: border-box;
   }
 
-  button {
+  .submit-button {
     background-color: $brown;
     border: none;
     height: 35px;
@@ -58,7 +87,7 @@
     margin: 50px auto 0;
   }
 
-  button:hover {
+  .submit-button:hover {
     background-color: lighten( $brown, 10% );
     cursor: pointer;
   }

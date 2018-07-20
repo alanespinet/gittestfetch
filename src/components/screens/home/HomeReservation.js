@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { history } from '../../App';
 
+import moment from 'moment';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import GroupField from '../../common/GroupField.js';
 import ReservationSuccess from '../../common/ReservationSuccess';
 import ReservationFailed from '../../common/ReservationFailed';
@@ -16,8 +20,8 @@ class HomeReservation extends React.Component {
     email: '',
     phone: '',
     numberOfGuests: '',
-    date: '',
-    hour: '',
+    date: moment(),
+    hour: moment(),
     archived: false,
     successShow: false,
     failedShow: false
@@ -48,13 +52,11 @@ class HomeReservation extends React.Component {
     this.setState( () => ({ numberOfGuests }) );
   }
 
-  handleDateOnChange = (e) => {
-    const date = e.target.value;
+  handleDateOnChange = (date) => {
     this.setState( () => ({ date }) );
   }
 
-  handleHourOnChange = (e) => {
-    const hour = e.target.value;
+  handleHourOnChange = (hour) => {
     this.setState( () => ({ hour }) );
   }
 
@@ -65,8 +67,8 @@ class HomeReservation extends React.Component {
       email: '',
       phone: '',
       numberOfGuests: '',
-      date: '',
-      hour: '',
+      date: moment(),
+      hour: moment(),
       archived: false,
       successShow: false,
       failedShow: false
@@ -156,20 +158,43 @@ class HomeReservation extends React.Component {
                   />
 
                   <div className="group-field-half-subrow">
-                    <GroupField group_type="half" field_type="text" field_id="reservation-date"
+                    {/* <GroupField group_type="half" field_type="text" field_id="reservation-date"
                       field_name="reservation-date" field_label="Date * (MM/DD/YYYY)" field_required={true}
                       field_value={this.state.date} onChange={this.handleDateOnChange}
-                    />
+                    /> */}
 
-                    <GroupField group_type="half" field_type="text" field_id="reservation-hour"
+                    <div className="date-picker-wrapper">
+                      <label>Date</label>
+                      <DatePicker
+                        dateFormat="MM/DD/YYYY"
+                        minDate={moment()}
+                        selected={this.state.date}
+                        onChange={this.handleDateOnChange}
+                      />
+                    </div>
+
+                    {/* <GroupField group_type="half" field_type="text" field_id="reservation-hour"
                       field_name="reservation-hour" field_label="Hour * (HH:MM)" field_required={true}
                       field_value={this.state.hour} onChange={this.handleHourOnChange}
-                    />
+                    /> */}
+
+                    <div className="date-picker-wrapper">
+                      <label>Hour</label>
+                      <DatePicker
+                        selected={this.state.hour}
+                        onChange={this.handleHourOnChange}
+                        showTimeSelect
+                        showTimeSelectOnly
+                        timeIntervals={30}
+                        dateFormat="LT"
+                        timeCaption="Time"
+                      />
+                    </div>
                   </div>
                 </div>
 
                 <div className="submit-wrapper">
-                  <button id="reservations-submit" onClick={this.handleSubmit}>Reserve</button>
+                  <button id="reservations-submit" className="submit-button" onClick={this.handleSubmit}>Reserve</button>
                 </div>
 
               </div>{ /* /.reservation-form__fields */ }
