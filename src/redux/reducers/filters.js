@@ -68,6 +68,9 @@ export default ( state = defaultState, action ) => {
         enableTo: action.payload
       }
 
+    case 'CLEAR_FILTERS':
+      return defaultState;
+
     default:
       return state;
   }

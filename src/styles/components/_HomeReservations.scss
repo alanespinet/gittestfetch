@@ -35,8 +35,6 @@
 
 .react-datepicker--time-only .react-datepicker__time-container { width: 120px; }
 
-// .react-datepicker__time-container .react-datepicker__time { width: 100px; }
-
 .reservation-form__fields {
 
   .group-field-row,
@@ -136,6 +134,8 @@
   .reservation-form__fields {
     label { font-size: 1.5rem; }
   }
+
+  .date-picker-wrapper { flex-basis: 48%; }
 }
 
 @media ( max-width: 767px ){
@@ -150,6 +150,16 @@
 
     button { margin-top: 30px; }
 
+    .date-picker-wrapper,
+    .react-datepicker-wrapper,
+    .react-datepicker__input-container { width: 100%; }
+
+    .date-picker-wrapper {
+      margin-bottom: 15px;
+      flex-basis: 100%;
+    }
+
+    .date-picker-wrapper:first-child { margin-top: 5px; }
   }
 
 }

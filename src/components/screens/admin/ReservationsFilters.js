@@ -52,10 +52,26 @@ class ReservationFilters extends React.Component {
     this.props.changeEnableTo(value);
   }
 
+  handleClearFilters = e => {
+    e.preventDefault();
+    this.props.clearFilters();
+
+    document.getElementById('reservations-archive').value = 'all';
+    document.getElementById('reservation-filters__vip').value = 'all';
+    document.getElementById('reservation-filters__private-table').value = 'all';
+    document.getElementById('reservation-filters__first-name').value = '';
+    document.getElementById('reservation-filters__last-name').value = '';
+    document.getElementById('reservation-filters__enable-from').checked = false;
+    document.getElementById('reservation-filters__enable-to').checked = false;
+  }
+
   render(){
     return (
       <div className="reservations-filters">
-        <div className="reservations-filters__row">
+
+        <h3>Filter Reservations by:</h3>
+
+        <div className="reservations-filters__row first-filters-row">
           <div className="reservation-filters__control">
             <label htmlFor="reservations-archive">Archived</label>
             <select id="reservations-archive" onChange={this.handleArchivedChange}>
@@ -84,7 +100,7 @@ class ReservationFilters extends React.Component {
           </div>
         </div>
 
-        <div className="reservations-filters__row">
+        <div className="reservations-filters__row second-filters-control">
           <div className="reservation-filters__control">
             <label htmlFor="reservation-filters__first-name">First Name</label>
             <input type="text" id="reservation-filters__first-name" onChange={this.handleFirstNameChange}/>
@@ -96,8 +112,8 @@ class ReservationFilters extends React.Component {
           </div>
 
           <div className="reservation-filters__control">
+            <label htmlFor="reservation-filters__enable-from">Enable from sarch</label>
             <input type="checkbox" id="reservation-filters__enable-from" onChange={this.handleEnableFromOnChange}/>
-            <label htmlFor="reservation-filters__enable-from">Enable from Date sarch</label>
           </div>
 
           <div className="reservation-filters__control">
@@ -110,8 +126,8 @@ class ReservationFilters extends React.Component {
           </div>
 
           <div className="reservation-filters__control">
+            <label htmlFor="reservation-filters__enable-to">Enable to sarch</label>
             <input type="checkbox" id="reservation-filters__enable-to" onChange={this.handleEnableToOnChange}/>
-            <label htmlFor="reservation-filters__enable-to">Enable to Date sarch</label>
           </div>
 
           <div className="reservation-filters__control">
@@ -122,7 +138,12 @@ class ReservationFilters extends React.Component {
               onChange={this.handleToOnChange}
             />
           </div>
+        </div>
 
+        <div className="reservations-filters__row">
+          <div className="reservation-filters__control clear-filters-wrapper">
+            <a href="#" className="clear-filters-button" onClick={this.handleClearFilters}>Clear Filters</a>
+          </div>
         </div>
       </div>
     )
@@ -138,7 +159,8 @@ const mapDispatchToProps = dispatch => ({
   changeFromDate: fd => dispatch(filters.changeFromDate(fd)),
   changeToDate: td => dispatch(filters.changeToDate(td)),
   changeEnableFrom: f => dispatch(filters.changeEnableFrom(f)),
-  changeEnableTo: t => dispatch(filters.changeEnableTo(t))
+  changeEnableTo: t => dispatch(filters.changeEnableTo(t)),
+  clearFilters: () => dispatch(filters.clearFilters())
 });
 
 const mapStateToProps = state => ({

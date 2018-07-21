@@ -6,6 +6,10 @@ import GroupFieldOptions from '../../common/GroupFieldOptions.js';
 import { connect } from 'react-redux';
 import * as actions from '../../../redux/actions';
 
+import moment from 'moment';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import ReservationSuccess from '../../common/ReservationSuccess';
 import ReservationFailed from '../../common/ReservationFailed';
 
@@ -67,8 +71,8 @@ class ReservationsForm extends React.Component {
       email: '',
       phone: '',
       numberOfGuests: '',
-      date: '',
-      hour: '',
+      date: moment(),
+      hour: moment(),
       tableType: '',
       privateTable: false,
       ocean: false,
@@ -130,8 +134,7 @@ class ReservationsForm extends React.Component {
     this.setState( () => ({ form_data }) )
   }
 
-  handleDateOnChange = (e) => {
-    const date = e.target.value;
+  handleDateOnChange = (date) => {
     const form_data = {
       ...this.state.form_data,
       date
@@ -139,8 +142,7 @@ class ReservationsForm extends React.Component {
     this.setState( () => ({ form_data }) )
   }
 
-  handleHourOnChange = (e) => {
-    const hour = e.target.value;
+  handleHourOnChange = (hour) => {
     const form_data = {
       ...this.state.form_data,
       hour
@@ -287,8 +289,8 @@ class ReservationsForm extends React.Component {
       email: '',
       phone: '',
       numberOfGuests: '',
-      date: '',
-      hour: '',
+      date: moment(),
+      hour: moment(),
       archived: false,
       tableType: '',
       privateTable: false,
@@ -390,7 +392,7 @@ class ReservationsForm extends React.Component {
                   />
 
                   <div className="group-field-half-subrow">
-                    <GroupField group_type="half" field_type="text" field_id="reservation-date"
+                    {/* <GroupField group_type="half" field_type="text" field_id="reservation-date"
                       field_name="reservation-date" field_label="Date * (MM/DD/YYYY)" field_required={true}
                       field_value={this.state.form_data.date} onChange={this.handleDateOnChange}
                     />
@@ -398,7 +400,30 @@ class ReservationsForm extends React.Component {
                     <GroupField group_type="half" field_type="text" field_id="reservation-hour"
                       field_name="reservation-hour" field_label="Hour * (HH:MM)" field_required={true}
                       field_value={this.state.form_data.hour} onChange={this.handleHourOnChange}
-                    />
+                    /> */}
+
+                    <div className="date-picker-wrapper">
+                      <label>Date</label>
+                      <DatePicker
+                        dateFormat="MM/DD/YYYY"
+                        minDate={moment()}
+                        selected={this.state.form_data.date}
+                        onChange={this.handleDateOnChange}
+                      />
+                    </div>
+
+                    <div className="date-picker-wrapper">
+                      <label>Hour</label>
+                      <DatePicker
+                        selected={this.state.form_data.hour}
+                        onChange={this.handleHourOnChange}
+                        showTimeSelect
+                        showTimeSelectOnly
+                        timeIntervals={30}
+                        dateFormat="LT"
+                        timeCaption="Time"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -458,7 +483,7 @@ class ReservationsForm extends React.Component {
                   </div>
 
                   <div className="submit-wrapper">
-                    <button id="reservations-submit" onClick={this.handleSubmit}>Reserve</button>
+                    <button id="reservations-submit" className="submit-button" onClick={this.handleSubmit}>Reserve</button>
                   </div>
                 </div>
               </div>

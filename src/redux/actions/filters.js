@@ -42,3 +42,7 @@ export const changeEnableTo = n_t => ({
   type: 'CHANGE_ENABLE_TO',
   payload: n_t
 });
+
+export const clearFilters = () => ({
+  type: 'CLEAR_FILTERS'
+});

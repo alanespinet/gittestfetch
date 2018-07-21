@@ -20,8 +20,8 @@ class ReservationList extends React.Component {
 
         <ReservationFilters />
         <ReservationListHeaders />
-
-        {this.props.reservations.map( r =>
+        { this.props.reservations.length > 0 ?
+          this.props.reservations.map( r =>
           <ReservationInList
             key={r._id}
             id={r._id}
@@ -31,7 +31,8 @@ class ReservationList extends React.Component {
             hour={moment(r.hour).format("HH:mm")}
             numberOfGuests={r.numberOfGuests}
             archived={r.archived}
-          /> )
+          /> ) :
+          <p className="no-reservations-found">No reservations found with the provided filter criteria</p>
         }
       </div>
     );
