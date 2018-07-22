@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+
 
 import {
   startArchiveReservation,
   startCancelReservation,
-  startUnarchiveReservation
+  startUnarchiveReservation,
+  setSelectedReservation
 } from '../../../redux/actions';
 
 
@@ -23,6 +26,11 @@ class ReservationInList extends React.Component {
   handleCancelReservation = () => {
     const id = this.props.id;
     this.props.cancelReservation(id);
+  }
+
+  handleSelectReservation = () => {
+    const id = this.props.id;
+    this.props.selectReservation(id);
   }
 
   render(){
@@ -52,7 +60,7 @@ class ReservationInList extends React.Component {
           </div>
 
           <div className="reservation-actions">
-            <button className="reservation-actions-button button-view">View</button>
+            <NavLink to={'/admin/panel/reservation/'} onClick={this.handleSelectReservation} className="reservation-actions-button button-view">View</NavLink>
 
             { this.props.archived ?
               ( <button className="reservation-actions-button button-archive" onClick={this.handleUnarchiveReservation}>Unarchive</button> )
@@ -72,7 +80,8 @@ class ReservationInList extends React.Component {
 const mapDispatchToProps = dispatch => ({
   archiveReservation: id => dispatch( startArchiveReservation(id) ),
   unarchiveReservation: id => dispatch( startUnarchiveReservation(id) ),
-  cancelReservation: id => dispatch( startCancelReservation(id) )
+  cancelReservation: id => dispatch( startCancelReservation(id) ),
+  selectReservation: id => dispatch( setSelectedReservation(id) )
 });
 
 export default connect(undefined, mapDispatchToProps)(ReservationInList);

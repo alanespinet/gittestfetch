@@ -171,3 +171,8 @@ export const authenticate = username => ({
 export const logOut = () => ({
   type: 'LOGOUT'
 });
+
+export const setSelectedReservation = id => ({
+  type: 'SELECT_RESERVATION',
+  payload: id
+});

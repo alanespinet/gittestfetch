@@ -1,5 +1,6 @@
 const defaultState = {
-  reservations: []
+  reservations: [],
+  selectedReservation: {}
 };
 
 export default ( state = defaultState, action ) => {
@@ -26,6 +27,12 @@ export default ( state = defaultState, action ) => {
       return {
         ...state,
         reservations: state.reservations.filter( r => r._id !== action.payload )
+      }
+
+    case 'SELECT_RESERVATION':
+      return {
+        ...state,
+        selectedReservation: state.reservations.filter( r => r._id === action.payload )[0]
       }
 
     default:
