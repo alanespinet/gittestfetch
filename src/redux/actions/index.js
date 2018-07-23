@@ -14,7 +14,7 @@ const addReservation = reservation => ({
 
 export const getReservations = () => {
   return dispatch => {
-    return axios.get('http://localhost:3090/reservations')
+    return axios.get('https://restaurantdata.herokuapp.com/reservations')
       .then( reservations => {
         dispatch( pushReservations( reservations.data ) )
       })
@@ -28,7 +28,7 @@ export const getReservations = () => {
 
 export const startAddReservation = reservation => {
   return dispatch => {
-    return axios.post('http://localhost:3090/reservation', reservation)
+    return axios.post('https://restaurantdata.herokuapp.com/reservation', reservation)
       .then( response => {
         if( response.data === '' ){ return 'error'; }
         dispatch( addReservation( reservation ) );
@@ -43,7 +43,7 @@ export const startAddReservation = reservation => {
 
 export const startLogin = info => {
   return dispatch => {
-    return axios.post('http://localhost:3090/login', info)
+    return axios.post('https://restaurantdata.herokuapp.com/login', info)
       .then( response => {
         const result = response.data;
         if( result === 'Error: No User Found' ){
@@ -73,7 +73,7 @@ export const startLogin = info => {
 
 export const startSignin = info => {
   return dispatch => {
-    return axios.post('http://localhost:3090/signin', info)
+    return axios.post('https://restaurantdata.herokuapp.com/signin', info)
       .then( response => {
         const result = response.data;
         if( result === 'Error: User in Use' ){
@@ -99,7 +99,7 @@ export const startSignin = info => {
 
 export const startArchiveReservation = id => {
   return dispatch => {
-    return axios.post(`http://localhost:3090/update/archiveres/${id}`, {})
+    return axios.post(`https://restaurantdata.herokuapp.com/update/archiveres/${id}`, {})
       .then( response => {
         const result = response.data;
         if( result !== 'error' ){
@@ -121,7 +121,7 @@ export const archiveReservation = id => ({
 
 export const startUnarchiveReservation = id => {
   return dispatch => {
-    return axios.post(`http://localhost:3090/update/unarchiveres/${id}`, {})
+    return axios.post(`https://restaurantdata.herokuapp.com/update/unarchiveres/${id}`, {})
       .then( response => {
         const result = response.data;
         if( result !== 'error' ){
@@ -143,7 +143,7 @@ export const unarchiveReservation = id => ({
 
 export const startCancelReservation = id => {
   return dispatch => {
-    return axios.post(`http://localhost:3090/delete/cancelres/${id}`, {})
+    return axios.post(`https://restaurantdata.herokuapp.com/delete/cancelres/${id}`, {})
     .then( response => {
       const result = response.data;
       if( result !== 'error' ){

@@ -20,7 +20,7 @@ class Footer extends React.Component {
 
   handleSubmitSubscribe = (e) => {
     e.preventDefault();
-    axios.post( 'http://localhost:3090/subscribe', { email: this.state.email } )
+    axios.post( 'https://restaurantdata.herokuapp.com/subscribe', { email: this.state.email } )
       .then( response => {
         if( response.data !== 'error' ){
           return this.setState( () => ({ successShow: true, email: '' }) )
