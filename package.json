@@ -36,6 +36,9 @@
     "webpack": "^3.7.1",
     "webpack-dev-server": "^2.9.2"
   },
+  "engines": {
+    "node": "9.4.0"
+  },
   "scripts": {
     "serve": "live-server public",
     "build:dev": "webpack",
