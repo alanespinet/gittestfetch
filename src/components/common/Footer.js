@@ -88,7 +88,7 @@ class Footer extends React.Component {
             </div>
 
             <div className="left-side">
-              <p><NavLink className="acknokwledments-link" to="/acknokwledments">acknokwledments</NavLink></p>
+              <p><NavLink className="acknokwledments-link" to="/acknowledgments">acknowledgments</NavLink></p>
             </div>
           </div>
           <div className="footer-colophon">

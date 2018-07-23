@@ -11,8 +11,15 @@
     z-index: -1;
   }
 
-  .bg_top { top: 0; }
-  .bg_bottom { bottom: 0; }
+  .bg_top {
+    top: 0;
+    z-index: -2;
+  }
+  
+  .bg_bottom {
+    bottom: 0;
+    z-index: -2;
+  }
 }
 
 

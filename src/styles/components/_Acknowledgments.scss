@@ -1,0 +1,100 @@
+.acknowledgments {
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-weight: normal;
+    margin-bottom: 30px;
+  }
+
+  .art-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 50px;
+
+    .art-single {
+      flex-basis: 30%;
+      margin-bottom: 40px;
+      position: relative;
+
+      .art-single-content {
+        height: 120px;
+        background-color: $white;
+        padding: 20px;
+        box-sizing: border-box;
+        position: relative;
+
+        p { margin-bottom: 20px; }
+
+        a {
+          color: $brown;
+          transition: all .3s ease;
+          position: absolute;
+          left: 20px;
+          bottom: 25px;
+        }
+
+        a:hover { color: $blue; }
+      }
+    }
+  }
+
+  .acknowledgments-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba( teal, 0 );
+    z-index: -1;
+  }
+
+
+  .admin-hero {
+
+    height: 300px;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .admin-hero__content {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1, p {
+        margin: 0;
+        color: $white;
+      }
+
+      h1 {
+        font-weight: normal;
+      }
+    }
+
+  }
+
+}
+
+
+@media (max-width: 991px){
+  .acknowledgments .art-list .art-single { flex-basis: 48%; }
+}
+
+@media (max-width: 767px){
+
+  .acknowledgments {
+    .admin-hero { height: 150px; }
+  }
+
+  .acknowledgments .art-list .art-single { flex-basis: 100%; }
+
+}
